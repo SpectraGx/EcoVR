@@ -37,7 +37,9 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
+    - Unity.XR.Hands.Samples.VisualizerSample
     - Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator
+    - Unity.XR.Interaction.Toolkit.Samples.Hands
     - Unity.XR.Interaction.Toolkit.Samples.StarterAssets
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
