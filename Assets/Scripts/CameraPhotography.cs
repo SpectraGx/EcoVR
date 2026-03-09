@@ -11,7 +11,7 @@ public class CameraPhotography : MonoBehaviour
     {
         if (lensPoint == null)
         {
-            Debug.LogWarning("Lens point is not assigned.");
+            Debug.LogWarning("Lens point no esta asignado.");
             return;
         }
 
@@ -31,7 +31,7 @@ public class CameraPhotography : MonoBehaviour
         }
         else
         {
-            Debug.Log("No enfocada");
+            Debug.Log("La camara no detecto ningun objeto dentro del rango");
         }
     }
 }
