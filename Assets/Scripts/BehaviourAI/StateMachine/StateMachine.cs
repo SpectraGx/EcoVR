@@ -40,7 +40,7 @@ public class StateMachine<TEntity>
         }
 
         //Luego asignamos el estado actual como el estado previo si hay un estado actual
-        if(_CurrentState)
+        if(_CurrentState != null)
         {
             _PreviousState = _CurrentState;
             //Corremos la logica que finaliza el estado

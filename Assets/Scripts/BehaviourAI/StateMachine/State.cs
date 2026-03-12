@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class State<TEntity> : MonoBehaviour
+public abstract class State<TEntity> 
 {
     //Se llama cuando entra al estado
     public abstract void Enter(TEntity entity);
