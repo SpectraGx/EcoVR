@@ -3235,11 +3235,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9b9c9126dff604eb86c5c8962199d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _navMeshAgent: {fileID: 697688916}
-  _playerTransform: {fileID: 1084444109}
-  _fleeDistance: 5
-  _wanderRadius: 10
-  _safeRadius: 8
+  NavMeshAgent: {fileID: 0}
+  PlayerTransform: {fileID: 0}
+  FleeDistance: 5
+  WanderRadius: 10
+  SafeRadius: 8
 --- !u!1 &757202612
 GameObject:
   m_ObjectHideFlags: 0
@@ -6291,11 +6291,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1187191830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1084444109 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-  m_PrefabInstance: {fileID: 1704560965}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1095530927
 GameObject:
   m_ObjectHideFlags: 0
@@ -7579,6 +7574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coati
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db88870f9ee9b80409faecd25f2e6c57, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8710,6 +8709,10 @@ PrefabInstance:
     - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x

@@ -3,37 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//Si es necesario añadir un namespace
 public class CoatiController : MonoBehaviour
 {
     // Cerebro del Coati
     public StateMachine<CoatiController> stateMachine;
 
     [Header("References to World")]
-    public NavMeshAgent _navMeshAgent;
-    public Transform _playerTransform;
+    public NavMeshAgent NavMeshAgent;
+    public Transform PlayerTransform;
 
     [Header("Settings")]
-    public float _fleeDistance = 5f;
-    public float _wanderRadius = 10f;
-    public float _safeRadius = 8f;
+    public float FleeDistance = 5f;
+    public float WanderRadius = 10f;
+    public float SafeRadius = 8f;
 
     // Instancia de los estados 
-    public CoatiWanderState wanderState;
-    public CoatiFleeState fleeState;
+    public CoatiWanderState S_WanderState;
+    public CoatiFleeState S_FleeState;
 
     void Start()
     {
-        _navMeshAgent = GetComponent<NavMeshAgent>();
+        NavMeshAgent = GetComponent<NavMeshAgent>();
 
         // Inicializamos la maquina de estados como el dueño
         stateMachine = new StateMachine<CoatiController>(this);
 
         // Instancias de los estados
-        wanderState = new CoatiWanderState();
-        fleeState = new CoatiFleeState();
+        S_WanderState = new CoatiWanderState();
+        S_FleeState = new CoatiFleeState();
 
         // Establecemos el estado inicial de la maquina
-        stateMachine.SetCurrentState(wanderState);
+        stateMachine.SetCurrentState(S_WanderState);
     }
 
     // Update is called once per frame
