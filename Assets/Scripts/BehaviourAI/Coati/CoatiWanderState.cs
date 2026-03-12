@@ -16,7 +16,7 @@ public class CoatiWanderState : State<CoatiController>
     public override void Execute(CoatiController entity)
     {
         // E1: Checa si el jugador invadio su espacio de seguridad
-        float distanceToPlayer = Vector3.Distance(entity.transform.position, entity.PlayerTransform.position);
+        float distanceToPlayer = Vector3.Distance(entity.transform.position, entity.PlayerTransform.position);//<---- En el caso que empiece a haber problemas de rendimiento poner un timer que cheque la distancia cada tanto tioempo y no cada cuadro
         
         if (distanceToPlayer < entity.FleeDistance)
         {
@@ -24,7 +24,6 @@ public class CoatiWanderState : State<CoatiController>
             entity.stateMachine.SetCurrentState(entity.S_FleeState);
             return;
         }
-
         // E2: PATRULLAJE
         timer += Time.deltaTime;
         if (timer >= wanderInterval)

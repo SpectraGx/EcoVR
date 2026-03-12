@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class CoatiController : MonoBehaviour
 {
     // Cerebro del Coati
+    [Header("Maquina de Estados")]
     public StateMachine<CoatiController> stateMachine;
 
     [Header("References to World")]
