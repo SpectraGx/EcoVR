@@ -19,22 +19,20 @@ public class CoatiIdleState : State<CoatiController>
 
     public override void Execute(CoatiController owner)
     {
-        timer += Time.deltaTime; // Incrementamos el timer
-
-        // E1: ¿Ya descansé lo suficiente?
-        if (timer >= idleDuration)
-        {
-            // Volvemos a patrullar
-            owner.stateMachine.SetCurrentState(owner.S_WanderState);
-            return;
-        }
-
-        // E2: Si el jugador se acerca demasiado, huimos
+        // E1: Si el jugador se acerca demasiado, dejamos el descanso y huimos
         float distanceToPlayer = Vector3.Distance(owner.transform.position, owner.PlayerTransform.position);
         if (distanceToPlayer <= owner.FleeDistance)
         {
             owner.stateMachine.SetCurrentState(owner.S_FleeState);
             return;
+        }
+
+        // E2: Sumar tiempo y checar si ya descansé lo suficiente
+        timer += Time.deltaTime;
+        if (timer >= idleDuration)
+        {
+            // Volvemos a patrullar
+            owner.stateMachine.SetCurrentState(owner.S_WanderState);
         }
     }
 
