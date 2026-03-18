@@ -22,6 +22,7 @@ public class CoatiController : MonoBehaviour
     // Instancia de los estados 
     public CoatiWanderState S_WanderState;
     public CoatiFleeState S_FleeState;
+    public CoatiIdleState S_IdleState;
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class CoatiController : MonoBehaviour
         // Instancias de los estados
         S_WanderState = new CoatiWanderState();
         S_FleeState = new CoatiFleeState();
+        S_IdleState = new CoatiIdleState();
 
         // Establecemos el estado inicial de la maquina
         stateMachine.SetCurrentState(S_WanderState);

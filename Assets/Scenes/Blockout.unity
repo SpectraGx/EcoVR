@@ -3235,11 +3235,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9b9c9126dff604eb86c5c8962199d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NavMeshAgent: {fileID: 0}
-  PlayerTransform: {fileID: 0}
+  NavMeshAgent: {fileID: 697688916}
+  PlayerTransform: {fileID: 1188617778}
   FleeDistance: 5
   WanderRadius: 10
   SafeRadius: 8
+--- !u!54 &697688921
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697688915}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 32
+  m_CollisionDetection: 0
 --- !u!1 &757202612
 GameObject:
   m_ObjectHideFlags: 0
@@ -7003,6 +7030,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lensPoint: {fileID: 980411322}
   maxPhotoDistance: 12
+--- !u!4 &1188617778 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1704560965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1199281525
 Mesh:
   m_ObjectHideFlags: 0
@@ -7588,6 +7620,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: db88870f9ee9b80409faecd25f2e6c57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 697688916}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: db88870f9ee9b80409faecd25f2e6c57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 697688921}
   m_SourcePrefab: {fileID: 100100000, guid: db88870f9ee9b80409faecd25f2e6c57, type: 3}
 --- !u!1 &1389842986
 GameObject:
