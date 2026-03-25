@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class TestBodrio : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject cheese;
+    //Literal este script spawnea un queso, que mas digo. SOlo es para testear que jale lo que sea, era un queso o una calaca
+    public void Cheese()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Instantiate(cheese, transform.position, quaternion.identity);
     }
 }
