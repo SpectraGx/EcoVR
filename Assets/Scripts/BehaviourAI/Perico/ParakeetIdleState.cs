@@ -8,6 +8,10 @@ public class ParakeetIdleState : State<ParakeetController>
     public override void Enter(ParakeetController bird)
     {
         Debug.Log("Pio pio: Idle en rama");
+
+        // ANIMACION DE IDLE
+        bird.ChangeAnimationState(bird.Anim_Idle);
+        
         idleTimer = 0f;
         restDuration = Random.Range(5f, 10f); // Duración aleatoria para el descanso
     }

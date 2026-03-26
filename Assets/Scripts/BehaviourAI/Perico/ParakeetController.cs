@@ -15,6 +15,13 @@ public class ParakeetController : MonoBehaviour
     public float FleeDistance = 5f;
     public float FlightSpeed = 10f;
 
+    [Header("Animations")]
+    public Animator Animator;
+    private int currentStateHash;
+
+    public readonly int Anim_Idle = Animator.StringToHash("Idle");
+    public readonly int Anim_Fly = Animator.StringToHash("Fly");
+
     // Instancia de los estados
     public ParakeetIdleState S_IdleState;
     public ParakeetFlightState S_FlightState;
@@ -40,5 +47,13 @@ public class ParakeetController : MonoBehaviour
     void Update()
     {
         stateMachine.Updating();
+    }
+
+    public void ChangeAnimationState(int newStateHash, float transitionDuration = 0.1f)
+    {
+        if (currentStateHash == newStateHash) return;
+
+        Animator.CrossFade(newStateHash, transitionDuration);
+        currentStateHash = newStateHash;
     }
 }

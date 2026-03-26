@@ -6,6 +6,9 @@ public class ParakeetFlightState : State<ParakeetController>
     {
         // Elegimos un nuevo Waypoint aleatorio
         Transform newTarget = bird.CurrentPerch;
+
+        // ANIMACION DE VUELO
+        bird.ChangeAnimationState(bird.Anim_Fly);
         
         // Bucle para asegurarnos de no elegir la misma rama
         if (bird.Perches.Length > 1)
