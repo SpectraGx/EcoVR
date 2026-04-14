@@ -18,25 +18,21 @@ public class CameraPhotography : MonoBehaviour
 
         Debug.DrawRay(lensPoint.position, lensPoint.forward * maxPhotoDistance, Color.green, 2f);
         RaycastHit hit;
-        if (cameraFeedback != null)
-        {
-            cameraFeedback.TriggerFeedback();
-        }
+
 
         if (Physics.Raycast(lensPoint.position, lensPoint.forward, out hit, maxPhotoDistance))
         {
-            if (hit.collider.CompareTag("Fauna"))
+            // 1. VFX & SFX de la camara
+            if (cameraFeedback != null) cameraFeedback.TriggerFeedback();
+
+            // 2. Buscamos si tiene un tag de "Animal"
+            AnimalID animalDetected = hit.collider.GetComponentInParent<AnimalID>();
+
+            if (animalDetected != null)
             {
-                Debug.Log("Foto tomada: " + hit.collider.gameObject.name);
+                // 3. Si es un animal, registramos la foto
+                PhotoManager.instance.RegisterPhoto(animalDetected.currentSpecies);
             }
-            else
-            {
-                Debug.Log("Foto del entorno tomada: " + hit.collider.gameObject.name);
-            }
-        }
-        else
-        {
-            Debug.Log("La camara no detecto ningun objeto dentro del rango");
         }
     }
 }
