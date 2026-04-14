@@ -6,6 +6,7 @@ public class CameraPhotography : MonoBehaviour
 {
     [SerializeField] private Transform lensPoint;
     [SerializeField] private float maxPhotoDistance = 12f;
+    public CameraFeedback cameraFeedback;
 
     public void TakePhoto()
     {
@@ -17,6 +18,10 @@ public class CameraPhotography : MonoBehaviour
 
         Debug.DrawRay(lensPoint.position, lensPoint.forward * maxPhotoDistance, Color.green, 2f);
         RaycastHit hit;
+        if (cameraFeedback != null)
+        {
+            cameraFeedback.TriggerFeedback();
+        }
 
         if (Physics.Raycast(lensPoint.position, lensPoint.forward, out hit, maxPhotoDistance))
         {
