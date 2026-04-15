@@ -15,16 +15,19 @@ public class CameraPhotography : MonoBehaviour
             Debug.LogWarning("Lens point no esta asignado.");
             return;
         }
+        // 1. VFX & SFX de la camara
+        if (cameraFeedback != null) cameraFeedback.TriggerFeedback();
 
-        Debug.DrawRay(lensPoint.position, lensPoint.forward * maxPhotoDistance, Color.green, 2f);
+        // CHECAR CON ETHAN QUE RAYCAST SE SIENTE MEJOR (SPHERECAST PARA HACERLO MAS FACIL O RAYCAST NORMAL PARA SER MAS PRECISO)
+
+        //Debug.DrawRay(lensPoint.position, lensPoint.forward * maxPhotoDistance, Color.green, 2f);
+        float laserThickness = 0.5f; // Grosor del rayo}
+        Debug.DrawRay(lensPoint.position, lensPoint.forward * maxPhotoDistance, Color.red, 2f);
         RaycastHit hit;
 
 
-        if (Physics.Raycast(lensPoint.position, lensPoint.forward, out hit, maxPhotoDistance))
+        if (Physics.SphereCast(lensPoint.position, laserThickness, lensPoint.forward, out hit, maxPhotoDistance))
         {
-            // 1. VFX & SFX de la camara
-            if (cameraFeedback != null) cameraFeedback.TriggerFeedback();
-
             // 2. Buscamos si tiene un tag de "Animal"
             AnimalID animalDetected = hit.collider.GetComponentInParent<AnimalID>();
 
