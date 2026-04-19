@@ -30,6 +30,7 @@ public class PhotoManager : MonoBehaviour
         photoRegister[Species.Perico] = false;
         photoRegister[Species.Iguana] = false;
         photoRegister[Species.Rana] = false;
+        photoRegister[Species.Hormiga] = false;
         photoRegister[Species.Mariposa] = false;
     }
 
@@ -66,6 +67,9 @@ public class PhotoManager : MonoBehaviour
                 break;
             case Species.Rana:
                 ranaStatus.text = "Fotografiado";
+                break;
+            case Species.Hormiga:
+                // Hormiga no tiene texto asignado, pero se puede agregar si es necesario
                 break;
             case Species.Mariposa:
                 // Mariposa no tiene texto asignado, pero se puede agregar si es necesario

@@ -6,7 +6,8 @@ public enum Species
     Perico,
     Iguana,
     Rana,
-    Mariposa
+    Mariposa,
+    Hormiga
 }
 
 public class AnimalID : MonoBehaviour
