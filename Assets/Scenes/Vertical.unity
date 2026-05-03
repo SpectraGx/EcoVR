@@ -9791,7 +9791,7 @@ MonoBehaviour:
   lensPoint: {fileID: 980411322}
   maxPhotoDistance: 12
   cameraFeedback: {fileID: 1187191833}
-  photoCaptureSystem: {fileID: 0}
+  photoCaptureSystem: {fileID: 1187191834}
 --- !u!82 &1187191832
 AudioSource:
   m_ObjectHideFlags: 0

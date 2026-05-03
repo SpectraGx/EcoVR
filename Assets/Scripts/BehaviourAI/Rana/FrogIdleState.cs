@@ -6,7 +6,7 @@ public class FrogIdleState : State<FrogController>
 {
     public override void Enter(FrogController frog)
     {
-        Debug.Log("RANA: CALMAO");
+        //Debug.Log("RANA: CALMAO");
     }
 
     public override void Execute(FrogController frog)
@@ -22,6 +22,6 @@ public class FrogIdleState : State<FrogController>
 
     public override void Exit(FrogController _owner)
     {
-        Debug.Log("RANA: AY QUE MIEDO, MEJOR ME VOY SALTANDO");
+        //Debug.Log("RANA: AY QUE MIEDO, MEJOR ME_VOY SALTANDO");
     }
 }

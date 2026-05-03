@@ -62,6 +62,8 @@ public class PhotoCaptureSystem : MonoBehaviour
         // Desactivamos para evitar errores gráficos
         RenderTexture.active = null;
 
+        Debug.Log("Foto capturada y convertida a textura. Tamaño: " + tex.width + "x" + tex.height);
+
         return tex;
     }
 

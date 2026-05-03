@@ -8,7 +8,7 @@ public class FrogJumpState : State<FrogController>
 
     public override void Enter(FrogController frog)
     {
-        Debug.Log("RANA: MAMAWEBO");
+        //  Debug.Log("RANA: MAMAWEBO");
         frog.StartCoroutine(frog.ParabolicJump());
     }
 

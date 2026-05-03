@@ -29,6 +29,6 @@ public class IguanaFleeState : State<IguanaController>
 
     public override void Exit(IguanaController _owner)
     {
-        Debug.Log("IGUANA: ESTOY A SALVO");
+        //Debug.Log("IGUANA: ESTOY A SALVO");
     }
 }

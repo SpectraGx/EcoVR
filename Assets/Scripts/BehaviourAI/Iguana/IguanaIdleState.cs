@@ -6,7 +6,7 @@ public class IguanaIdleState : State<IguanaController>
 {
     public override void Enter(IguanaController iguana)
     {
-        Debug.Log("IGUANA: COMO PUEDE HACER TANTO CALOOOORRRRR");
+        //Debug.Log("IGUANA: COMO PUEDE HACER TANTO CALOOOORRRRR");
     }
 
     public override void Execute(IguanaController iguana)
@@ -22,6 +22,6 @@ public class IguanaIdleState : State<IguanaController>
 
     public override void Exit(IguanaController _owner)
     {
-        Debug.Log("IGUANA: AY QUE MIEDO, MEJOR ME VOY");
+        //Debug.Log("IGUANA: AY QUE MIEDO, MEJOR ME VOY");
     }
 }

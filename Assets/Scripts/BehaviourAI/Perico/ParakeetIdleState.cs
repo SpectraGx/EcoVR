@@ -7,7 +7,7 @@ public class ParakeetIdleState : State<ParakeetController>
 
     public override void Enter(ParakeetController bird)
     {
-        Debug.Log("Pio pio: Idle en rama");
+        //Debug.Log("Pio pio: Idle en rama");
 
         // ANIMACION DE IDLE
         bird.ChangeAnimationState(bird.Anim_Idle);
@@ -36,6 +36,6 @@ public class ParakeetIdleState : State<ParakeetController>
 
     public override void Exit(ParakeetController bird)
     {
-        Debug.Log("Pio pio: Despegando de la rama");
+        //Debug.Log("Pio pio: Despegando de la rama");
     }
 }

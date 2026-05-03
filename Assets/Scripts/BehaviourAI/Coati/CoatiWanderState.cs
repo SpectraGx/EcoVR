@@ -5,7 +5,7 @@ public class CoatiWanderState : State<CoatiController>
 {
     public override void Enter(CoatiController coati)
     {
-        Debug.Log("Coati patrullero");
+        //Debug.Log("Coati patrullero");
         coati.NavMeshAgent.speed = 1.5f; // Velocidad de patrullaje
         coati.NavMeshAgent.isStopped = false;
 

@@ -24,7 +24,7 @@ public class ParakeetFlightState : State<ParakeetController>
 
         // El pajaro apunte hacia la nueva rama
         bird.transform.LookAt(bird.CurrentPerch.position);
-        Debug.Log("Pio pio: Despegando hacia nueva rama");
+        //Debug.Log("Pio pio: Despegando hacia nueva rama");
     }
 
     public override void Execute(ParakeetController bird)
@@ -41,7 +41,7 @@ public class ParakeetFlightState : State<ParakeetController>
         
         if (distanceToTarget <= 0.1f)
         {
-            Debug.Log("Pio pio: Llegué a la rama");
+            //Debug.Log("Pio pio: Llegué a la rama");
             bird.stateMachine.SetCurrentState(bird.S_IdleState);
         }
     }
@@ -49,6 +49,6 @@ public class ParakeetFlightState : State<ParakeetController>
     public override void Exit(ParakeetController bird)
     {
         bird.transform.position = bird.CurrentPerch.position;
-        Debug.Log("Pio pio: Aterrizaje exitoso");
+        //Debug.Log("Pio pio: Aterrizaje exitoso");
     }
 }

@@ -5,7 +5,7 @@ public class CoatiFleeState : State<CoatiController>
 {
     public override void Enter(CoatiController entity)
     {
-        Debug.Log("CORRE, COATI, CORRE");
+        //Debug.Log("CORRE, COATI, CORRE");
         entity.NavMeshAgent.speed = 8f; // Aumentamos la velocidad por pánico
         entity.NavMeshAgent.isStopped = false; // Nos aseguramos de que pueda moverse
         
@@ -34,7 +34,7 @@ public class CoatiFleeState : State<CoatiController>
 
     public override void Exit(CoatiController entity)
     {
-        Debug.Log("Estoy a salvo");
+        //Debug.Log("Estoy a salvo");
         entity.NavMeshAgent.ResetPath(); 
     }
 

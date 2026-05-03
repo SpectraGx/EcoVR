@@ -72,7 +72,7 @@ public class FrogController : MonoBehaviour
 
         transform.position = endPos; // Asegurar que la rana llegue exactamente al punto final
 
-        Debug.Log("RANA: ADIOS TONTULES");
+        //Debug.Log("RANA: ADIOS TONTULES");
         gameObject.SetActive(false); // Desactivar la rana después de saltar al escondite
     }
 

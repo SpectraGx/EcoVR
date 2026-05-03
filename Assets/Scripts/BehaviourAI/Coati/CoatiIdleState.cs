@@ -12,7 +12,7 @@ public class CoatiIdleState : State<CoatiController>
         idleDuration = Random.Range(2f, 5f); // Duración aleatoria entre 2 y 5 segundos
         timer = 0f; // Reiniciamos el timer
 
-        Debug.Log("Coati se ha detenido a descansar.");
+        //Debug.Log("Coati se ha detenido a descansar.");
     }
 
     public override void Execute(CoatiController owner)
@@ -36,7 +36,7 @@ public class CoatiIdleState : State<CoatiController>
 
     public override void Exit(CoatiController owner)
     {
-        Debug.Log("Coati esta listo para seguir patrullando.");
+        //Debug.Log("Coati esta listo para seguir patrullando.");
         owner.NavMeshAgent.isStopped = false; // Reanudamos el movimiento del Coati
     }
 }
