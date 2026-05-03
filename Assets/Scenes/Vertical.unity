@@ -5678,7 +5678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 2037392073}
-  angeTolarence: 60
+  angeTolarence: 45
 --- !u!114 &215942845
 MonoBehaviour:
   m_ObjectHideFlags: 0
