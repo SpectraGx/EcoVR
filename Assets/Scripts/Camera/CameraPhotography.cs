@@ -35,10 +35,6 @@ public class CameraPhotography : MonoBehaviour
 
             if (animalDetected != null)
             {
-                // 3. Si es un animal, registramos la foto en el UI
-                PhotoManager.instance.RegisterPhoto(animalDetected.currentSpecies);
-                
-                // Extraemos el nombre de la especie para la memoria
                 speciesDetectedName = animalDetected.currentSpecies.ToString(); 
             }
         }
