@@ -19,24 +19,31 @@ public class PhotoCaptureSystem : MonoBehaviour
     // Cola para las fotos random
     public Queue<Texture2D> photosRandom = new Queue<Texture2D>();
 
-    /// Llama a esta función cuando el jugador presiona el gatillo para tomar la foto.
+    public UnityEngine.UI.RawImage visorDisplay;
+
+    /// Cuando el jugador presiona el gatillo para tomar la foto
     public void TakePhotograph(string speciesDetected)
     {
-        // 1. BARRERA MATEMÁTICA: ¿Es una selfie?
-        // Calculamos hacia dónde apunta la lente vs hacia dónde mira el jugador
+        // 1. ¿Es una selfie?
+        // Calculamos hacia donde apunta la lente vs hacia donde mira el jugador
         float dotProduct = Vector3.Dot(lensCamera.transform.forward, playerHead.forward);
 
-        // Si el resultado es menor a -0.5, significa que las cámaras se están mirando de frente
+        // Si el resultado es menor a -0.5, significa que las camaras se estan mirando de frente
         if (dotProduct < -0.5f)
         {
             Debug.LogWarning("¡Lente apuntando al jugador! Foto bloqueada para mantener inmersión.");
             return;
         }
 
-        // 2. CREACIÓN DE LA TEXTURA 
+        // 2. CREACION DE LA TEXTURA 
         Texture2D newPhoto = ExtractTexture(visorRenderTexture);
 
-        // 3. GESTIÓN DE LA MEMORIA (Sobrescritura)
+        if (visorDisplay != null)
+        {
+            visorDisplay.texture = newPhoto;
+        }
+
+        // 3. GESTION DE LA MEMORIA (Sobrescritura)
         if (string.IsNullOrEmpty(speciesDetected) || speciesDetected == "Ninguno")
         {
             SaveRandomPhoto(newPhoto);
@@ -69,7 +76,7 @@ public class PhotoCaptureSystem : MonoBehaviour
 
     private void SavePhotoSpecies(string species, Texture2D newPhoto)
     {
-        // Si ya le habíamos tomado foto a esta species, DESTRUIMOS la vieja para liberar RAM
+        // Si ya habiamos tomado una foto a esta species, DESTRUIMOS la vieja para liberar RAM
         if (photoSpecies.ContainsKey(species))
         {
             Destroy(photoSpecies[species]);
