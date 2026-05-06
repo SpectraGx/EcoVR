@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraPhotography : MonoBehaviour
@@ -10,6 +11,9 @@ public class CameraPhotography : MonoBehaviour
 
     [Header("Memory Connection")]
     public PhotoCaptureSystem photoCaptureSystem;
+
+    [Header("Tutorial Connection")]
+    public TutorialManager tutorialManager;
 
     public void TakePhoto()
     {
@@ -36,6 +40,14 @@ public class CameraPhotography : MonoBehaviour
             if (animalDetected != null)
             {
                 speciesDetectedName = animalDetected.currentSpecies.ToString(); 
+            }
+            else if (hit.collider.CompareTag("ObjectiveTutorial")) // 3. Si no es un animal, verificamos si es el objetivo del tutorial
+            {
+                speciesDetectedName = "Ninguno";
+                if (tutorialManager != null)
+                {
+                    tutorialManager.PhotoTakenSuccess(); // Le decimos al tutorial que se tomo la foto correctamente
+                }
             }
         }
 
