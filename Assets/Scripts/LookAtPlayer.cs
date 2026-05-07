@@ -23,6 +23,7 @@ public class LookAtPlayer : MonoBehaviour
         if (playerHead != null)
         {
             transform.LookAt(playerHead);
+            transform.Rotate(0,180,0);
         }
     }
 }
