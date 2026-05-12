@@ -3,11 +3,11 @@ using UnityEngine;
 public class VirtualBelt : MonoBehaviour
 {
     [Header("References")]
-    public Transform headTransform; // Asigna la Main Camera de tu XR Origin en el Inspector
+    public Transform headTransform; // Asigna la main camera del XR Origin
 
     [Header("Settings of the Belt")]
     public float heightOffset = 0.6f; // Distancia hacia abajo desde la cabeza
-    public float forwardOffset = 0.15f; // Distancia hacia adelante
+    public float forwardOffset = 0.3f; // Distancia hacia adelante
     public float rotationSpeed = 5f; // Velocidad de rotacion del cinturon
 
     private void Update()
