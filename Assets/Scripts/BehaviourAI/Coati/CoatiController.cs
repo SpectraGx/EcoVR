@@ -19,6 +19,10 @@ public class CoatiController : MonoBehaviour
     public float WanderRadius = 10f;
     public float SafeRadius = 8f;
 
+    [Header("SoundSettings")]
+    SFXPlayer playerSFX;
+    float sfxTimer;
+
     // Instancia de los estados 
     public CoatiWanderState S_WanderState;
     public CoatiFleeState S_FleeState;
@@ -38,11 +42,31 @@ public class CoatiController : MonoBehaviour
 
         // Establecemos el estado inicial de la maquina
         stateMachine.SetCurrentState(S_WanderState);
+
+        //Buscamos el Script de los SFX
+        playerSFX = GetComponent<SFXPlayer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         stateMachine.Updating();
+        ReproduceRandomSound();
+    }
+
+
+
+    void ReproduceRandomSound()
+    {
+        //Reproduces un sonido cada tanto tiempo aleatotrio entre 10 a 20 segundos.
+        if(sfxTimer <= 0)
+        {
+            playerSFX.PlayRandomSFX();
+            sfxTimer = Random.Range(10, 20);
+        }
+        else
+        {
+            sfxTimer -= 1 * Time.deltaTime;
+        }
     }
 }

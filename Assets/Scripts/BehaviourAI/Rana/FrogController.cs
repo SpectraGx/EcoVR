@@ -21,6 +21,10 @@ public class FrogController : MonoBehaviour
     public FrogIdleState S_IdleState;
     public FrogJumpState S_JumpState;
 
+    [Header("SoundSettings")]
+    SFXPlayer playerSFX;
+    float sfxTimer;
+
     void Start()
     {
         stateMachine = new StateMachine<FrogController>(this);
@@ -35,11 +39,15 @@ public class FrogController : MonoBehaviour
         }
 
         stateMachine.SetCurrentState(S_IdleState); // En el charco
+
+        //Buscamos el Script de los SFX
+        playerSFX = GetComponent<SFXPlayer>();
     }
 
     void Update()
     {
         stateMachine.Updating();
+        ReproduceRandomSound();
     }
 
     // CORRUTINA QUE CALCULA UN SALTO PERFECTO EN PARABOLA
@@ -74,6 +82,21 @@ public class FrogController : MonoBehaviour
 
         //Debug.Log("RANA: ADIOS TONTULES");
         gameObject.SetActive(false); // Desactivar la rana después de saltar al escondite
+    }
+
+
+    void ReproduceRandomSound()
+    {
+        //Reproduces un sonido cada tanto tiempo aleatotrio entre 5 a 15 segundos.
+        if(sfxTimer <= 0)
+        {
+            playerSFX.PlayRandomSFX();
+            sfxTimer = Random.Range(10, 20);
+        }
+        else
+        {
+            sfxTimer -= 1 * Time.deltaTime;
+        }
     }
 
 }

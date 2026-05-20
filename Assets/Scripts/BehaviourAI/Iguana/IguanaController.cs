@@ -20,6 +20,10 @@ public class IguanaController : MonoBehaviour
     public IguanaFleeState S_FleeState;
     public IguanaHiddenState S_HideState;
 
+    [Header("SoundSettings")]
+    SFXPlayer playerSFX;
+    float sfxTimer;
+
     void Start()
     {
         stateMachine = new StateMachine<IguanaController>(this);
@@ -29,10 +33,28 @@ public class IguanaController : MonoBehaviour
         S_HideState = new IguanaHiddenState();
 
         stateMachine.SetCurrentState(S_IdleState); // Tomando el sol
+
+        //Buscamos el Script de los SFX
+        playerSFX = GetComponent<SFXPlayer>();
     }
 
     void Update()
     {
         stateMachine.Updating();
+        ReproduceRandomSound();
+    }
+
+    void ReproduceRandomSound()
+    {
+        //Reproduces un sonido cada tanto tiempo aleatotrio entre 5 a 15 segundos.
+        if(sfxTimer <= 0)
+        {
+            playerSFX.PlayRandomSFX();
+            sfxTimer = Random.Range(10, 20);
+        }
+        else
+        {
+            sfxTimer -= 1 * Time.deltaTime;
+        }
     }
 }
